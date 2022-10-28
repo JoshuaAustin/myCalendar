@@ -1,0 +1,186 @@
+<!-- <div *ngFor="let any of events" style="color: white;">
+  {{ any.starttime | date: "full" }}
+</div> -->
+
+<div class="day-circle">
+    <div class="day-number">{{ date | date: "d" }}</div>
+  </div>
+  
+ <div class="dayview">
+  <div class="container">
+    <ul class="time-panel">
+      <li>06:00</li>
+      <li>07:00</li>
+      <li>08:00</li>
+      <li>09:00</li>
+      <li>10:00</li>
+      <li>11:00</li>
+      <li>12:00</li>
+      <li>13:00</li>
+      <li>14:00</li>
+      <li>15:00</li>
+      <li>16:00</li>
+      <li>17:00</li>
+      <li>18:00</li>
+      <li>19:00</li>
+      <li>20:00</li>
+      <li>21:00</li>
+    </ul>
+  
+    <div class="content">
+      
+
+      <!-- 1666636200000    actual date for work 1  -->
+
+      <!-- <div class="row" style=" padding-left: 35px;">
+        <div style="margin-top: 31px">
+          <div *ngFor="let any of events"  class="row">
+            <div
+              class="design-box"
+              *ngIf="
+                (any.eventdate | date: 'dd/MM/yyyy') ==
+                (date | date: 'dd/MM/yyyy')
+              "
+              [ngClass]="{
+                color1: any.eventType == 1,
+                color2: any.eventType == '2',
+                color3: any.eventType == '3'
+              }"
+              [style.margin-top]="this.getheight( diff_minutes(startTime ,any.starttime)) + 'px'"
+              [style.height]="this.getheight( diff_minutes(any.endtime, any.starttime)) + 'px'"
+            >
+              <div class="design-box-style">
+                <div class="design-box-text">
+                  <div>{{ any.name }}</div>
+                  <div class="time-row">
+                    <div>
+                      {{ any.starttime | date: "HH:mm" }} -
+                      {{
+                        any.endtime | date: "HH:mm"
+                      }}
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </div>
+                    <img class = "pen-icon" src="assets/pen.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+    </div>
+  
+    <div class="lines">
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+        _________________________________________________________________________________________________________________________
+      </div>
+      <div>
+         _________________________________________________________________________________________________________________________
+      </div>
+    </div>
+
+
+    <div class="start-time-line">
+      <div style="color:#000000; display: flex; flex-direction: row;"  [style.margin-top]="this.startheight + 'px'">    
+        __________________________________________________<div class="time-line-text">START</div>________________________________________________________________
+            </div>
+    </div>
+
+    <div class="end-time-line">
+      <div style="color:#000000; display: flex; flex-direction: row;"  [style.margin-top]="this.endheight + 'px'">    
+        ___________________________________________________<div class="time-line-text">END</div>_________________________________________________________________
+            </div>
+    </div>
+
+
+    <div class="time-line">
+      <div style="color:#000000; display: flex; flex-direction: row;" *ngIf="((this.date | date: 'dd/MM/yyyy') == (this.now| date: 'dd/MM/yyyy')) && this.exist == true"  [style.margin-top]="this.getheight(this.difference) + 'px'">    
+        __________________________________________________________________________________________________________________<div class="LiveTime">{{ now | date: 'HH:mm' }}  <span class="timetext">{{ now | date: 'hh:mm:ss a' }}</span></div>
+            </div>
+    </div>
+
+  </div>
+
+  <div class="content-right">
+
+    View Date : {{ date | date: 'EEEE, MMMM d, y' }}   <br>
+
+    Now Date : {{ now | date: 'EEEE, MMMM d, y' }}   <br>
+    
+    
+    
+    Today  : {{ today | date: 'MMMM d, y' }}   <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="clock-circle"> {{ now | date: ' h:mm:ss a' }}</div>
+
+    <br>
+
+    <br>
+    <br>
+    <br>
+     Buttons -  <br>
+     START   <br>
+     BREAK   <br>
+    END DAY   <br>
+
+
+     <!--  <br>
+    DataSet : <br>
+ <div *ngFor="let any of events">
+    {{ any.eventdate | date: "medium" }} <br>
+      {{ any.starttime | date: "medium" }} <br>
+      {{ any.name }}
+      <br>
+    </div> -->
+
+
+  </div>
+  
+ </div>

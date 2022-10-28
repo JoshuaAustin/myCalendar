@@ -1,0 +1,319 @@
+<div class="week-bar">
+  <div *ngFor="let i of daysinweek(date)">
+    <div *ngIf="( today | date: 'dd/MM') == (i | date: 'dd/MM')">
+      <div class="day-circle-today">
+        <div class="day-number">{{ i | date: 'dd' }}</div>
+        <span class="timetext">
+          <div>{{ i | date: 'MMMM d, y' }}</div>
+          <div style ="margin-top: 15px;">{{ now | date: 'hh:mm:ss a' }}</div>
+        </span>
+      </div>
+    </div>
+    <div *ngIf="(today | date: 'dd/MM') != (i | date: 'dd/MM')">
+      <div class="day-circle-day">
+        <div class="day-number">{{ i | date: "dd" }}</div>
+        <span class="timetext">{{ i | date: 'MMMM d, y' }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <ul class="time-panel">
+    <li>06:00</li>
+    <li>07:00</li>
+    <li>08:00</li>
+    <li>09:00</li>
+    <li>10:00</li>
+    <li>11:00</li>
+    <li>12:00</li>
+    <li>13:00</li>
+    <li>14:00</li>
+    <li>15:00</li>
+    <li>16:00</li>
+    <li>17:00</li>
+    <li>18:00</li>
+    <li>19:00</li>
+    <li>20:00</li>
+    <li>21:00</li>
+  </ul>
+
+
+  <div class="content">
+
+    <!-- <div class="row">
+      <div class="design-box-container"> 
+        <div *ngFor="let in of daysinweek(date);">
+          <div class="design-box" style="width: 140px" *ngFor="let any of events">
+            <div class="design-box" style="width: 140.7px"
+              *ngIf="(any.eventdate | date: 'dd/MM') == (in | date: 'dd/MM') && (in | date: 'dd/MM') == (daysinweek(date)[2] | date: 'dd/MM')"
+              [ngClass]="{
+                color1: any.eventType == '1',
+                color2: any.eventType == '2',
+                color3: any.eventType == '3'
+              }">
+              <div class="design-box-style">
+                <div class="design-box-text">
+                  <div>{{ any.name }}</div>
+                  <div class="time-row">
+                    <div>
+                      {{ any.starttime | date: "HH:mm" }}
+                      &nbsp;
+                    </div>
+                    <img src="assets/images/edit-pen.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 176px; width: 140.7px; margin-right: 5px;">
+        <div *ngFor="let in of daysinweek(date);">
+          <div class="design-box" style="width: 140px" *ngFor="let any of events">
+            <div class="design-box" style="width: 140.7px"
+              *ngIf="(any.eventdate | date: 'dd/MM') == (in | date: 'dd/MM') && (in | date: 'dd/MM') == (daysinweek(date)[2] | date: 'dd/MM')"
+              [ngClass]="{
+              color1: any.eventType == '1',
+              color2: any.eventType == '2',
+              color3: any.eventType == '3'
+            }">
+              <div class="design-box-style">
+                <div class="design-box-text">
+                  <div>{{ any.name }}</div>
+                  <div class="time-row">
+                    <div>
+                      {{ any.starttime | date: "HH:mm" }}
+                      &nbsp;
+                    </div>
+                    <img src="assets/images/edit-pen.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 176px; width: 140.7px; margin-right: 5px;">
+        <div *ngFor="let in of daysinweek(date);">
+          <div class="design-box" style="width: 140px" *ngFor="let any of events">
+            <div class="design-box" style="width: 140.7px"
+              *ngIf="(any.eventdate | date: 'dd/MM') == (in | date: 'dd/MM') && (in | date: 'dd/MM') == (daysinweek(date)[2] | date: 'dd/MM')"
+              [ngClass]="{
+            color1: any.eventType == '1',
+            color2: any.eventType == '2',
+            color3: any.eventType == '3'
+          }">
+              <div class="design-box-style">
+                <div class="design-box-text">
+                  <div>{{ any.name }}</div>
+                  <div class="time-row">
+                    <div>
+                      {{ any.starttime | date: "HH:mm" }}
+                      &nbsp;
+                    </div>
+                    <img src="assets/images/edit-pen.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 176px; width: 140.7px; margin-right: 5px;">
+        <div *ngFor="let in of daysinweek(date);">
+          <div class="design-box" style="width: 140px" *ngFor="let any of events">
+            <div class="design-box" style="width: 140.7px"
+              *ngIf="(any.eventdate | date: 'dd/MM') == (in | date: 'dd/MM') && (in | date: 'dd/MM') == (daysinweek(date)[2] | date: 'dd/MM')"
+              [ngClass]="{
+          color1: any.eventType == '1',
+          color2: any.eventType == '2',
+          color3: any.eventType == '3'
+        }">
+              <div class="design-box-style">
+                <div class="design-box-text">
+                  <div>{{ any.name }}</div>
+                  <div class="time-row">
+                    <div>
+                      {{ any.starttime | date: "HH:mm" }}
+                      &nbsp;
+                    </div>
+                    <img src="assets/images/edit-pen.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 176px; width: 140.7px; margin-right: 5px;">
+        <div *ngFor="let in of daysinweek(date);">
+          <div class="design-box" style="width: 140px" *ngFor="let any of events">
+            <div class="design-box" style="width: 140.7px"
+              *ngIf="(any.eventdate | date: 'dd/MM') == (in | date: 'dd/MM') && (in | date: 'dd/MM') == (daysinweek(date)[2] | date: 'dd/MM')"
+              [ngClass]="{
+        color1: any.eventType == '1',
+        color2: any.eventType == '2',
+        color3: any.eventType == '3'
+      }">
+              <div class="design-box-style">
+                <div class="design-box-text">
+                  <div>{{ any.name }}</div>
+                  <div class="time-row">
+                    <div>
+                      {{ any.starttime | date: "HH:mm" }}
+                      &nbsp;
+                    </div>
+                    <img src="assets/images/edit-pen.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 176px; width: 140.7px; margin-right: 5px;">
+        <div *ngFor="let in of daysinweek(date);">
+          <div class="design-box" style="width: 140px" *ngFor="let any of events">
+            <div class="design-box" style="width: 140.7px"
+              *ngIf="(any.eventdate | date: 'dd/MM') == (in | date: 'dd/MM') && (in | date: 'dd/MM') == (daysinweek(date)[2] | date: 'dd/MM')"
+              [ngClass]="{
+        color1: any.eventType == '1',
+        color2: any.eventType == '2',
+        color3: any.eventType == '3'
+      }">
+              <div class="design-box-style">
+                <div class="design-box-text">
+                  <div>{{ any.name }}</div>
+                  <div class="time-row">
+                    <div>
+                      {{ any.starttime | date: "HH:mm" }}
+                      &nbsp;
+                    </div>
+                    <img src="assets/images/edit-pen.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 176px; width: 140.7px; margin-right: 5px;">
+        <div *ngFor="let in of daysinweek(date);">
+          <div class="design-box" style="width: 140px" *ngFor="let any of events">
+            <div class="design-box" style="width: 140.7px"
+              *ngIf="(any.eventdate | date: 'dd/MM') == (in | date: 'dd/MM') && (in | date: 'dd/MM') == (daysinweek(date)[2] | date: 'dd/MM')"
+              [ngClass]="{
+        color1: any.eventType == '1',
+        color2: any.eventType == '2',
+        color3: any.eventType == '3'
+      }">
+              <div class="design-box-style">
+                <div class="design-box-text">
+                  <div>{{ any.name }}</div>
+                  <div class="time-row">
+                    <div>
+                      {{ any.starttime | date: "HH:mm" }} -
+                      {{
+                        any.endtime | date: "HH:mm"
+                      }}
+                      &nbsp;
+                    </div>
+                    <img src="assets/images/edit-pen.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+    <!-- <div class="horizontal-lines">
+    <div class="hl"></div>
+    <div class="hl"></div>
+    <div class="hl"></div>
+    <div class="hl"></div>
+    <div class="hl"></div>
+    <div class="hl"></div>
+  </div>
+
+  <div class="vertical-lines">
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div> 
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div>
+    <div class="vl"></div>
+  </div> -->
+
+  <div class="horizontal-lines">
+    <div class="hl"></div>
+    <div class="hl"></div>
+    <div class="hl"></div>
+    <div class="hl"></div>
+    <div class="hl"></div>
+    <div class="hl"></div>
+  </div>
+
+  <div class="vertical-lines">
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+    <div>
+      _____________________________________________________________________________________________________________________________________________________________________________________
+    </div>
+  </div>
+</div>

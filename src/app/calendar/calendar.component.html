@@ -1,0 +1,117 @@
+
+<div class="background"></div>
+
+  <!-- __________________________________________________________________________ -->
+
+<div class="roww">
+  <div class="container">
+    <div class="row">
+      <div class="toggle">
+        <div class="month-box" *ngIf="dayflag">
+          <img class = "leftarrow"
+            src="./assets/arrow.png"
+            alt=""
+            (click)="decrementday()"
+          />
+  
+          <div class="datetag">
+            <h1>{{ date | date: "d" }}</h1>
+            <h1>{{ date | date: "LLLL" }}</h1>
+            <h1>{{ date | date: "y" }}</h1>
+          </div>
+  
+          <img class = "rightarrow"
+            src="./assets/arrow.png"
+            alt=""
+            (click)="incrementday()"
+          />
+          <button id="today" (click)="goToToday()">Today</button>
+        </div>
+  
+        <div class="month-box" *ngIf="weekflag">
+          <img class = "leftarrow"
+          src="./assets/arrow.png"
+            alt=""
+            (click)="decrementweek()"
+          />
+  
+          <div class="datetagweek">
+            <h1>{{ date | date: "LLLL" }}</h1>
+            <h1>{{ date | date: "y" }}</h1>
+          </div>
+  
+          <img class = "rightarrow"
+          src="./assets/arrow.png"
+            alt=""
+            (click)="incrementweek()"
+          />
+          <button id="today" (click)="goToToday()">Today</button>
+        </div>
+  
+        <div class="month-box" *ngIf="monthflag">
+          <img class = "leftarrow"
+          src="./assets/arrow.png"
+            alt=""
+            (click)="decrementmonth()"
+          />
+  
+          <div class="datetagmonth">
+            <h1>{{ date | date: "LLLL" }}</h1>
+            <h1>{{ date | date: "y" }}</h1>
+          </div>
+  
+          <img class = "rightarrow"
+          src="./assets/arrow.png"
+            alt=""
+            (click)="incrementmonth()"
+          />
+          <button id="today" (click)="goToToday()">Today</button>
+        </div>
+      </div>
+      
+<!-- <div class ="select">
+  <select (change)="openTab($event)">
+    <option value="day">Day</option>
+    <option value="week">Week</option>
+    <option value="month">Month</option>
+  </select>  
+</div>-->
+
+  <select class="dropdown" id="week" (change)="openTab($event)">
+    <option value="day">Daily</option>
+    <option value="week">Weekly</option>
+    <option value="month">Monthly</option>
+  </select>
+
+    
+    </div>
+  </div>
+  <div class ="icon-position">
+    <img class="icon" src="assets/home.png" type="button" routerLink="/">
+  </div>
+</div>
+
+  <app-day-view
+  *ngIf="dayflag"
+  [count1]="x1"
+  [count2]="x2"
+  [todayis]="today"
+></app-day-view>
+  
+<app-week-view
+    *ngIf="weekflag"
+    [count1]="x1"
+    [count2]="x2"
+    [todayis]="today"
+  ></app-week-view>
+
+  
+<!--  
+  
+  <app-month-view
+    *ngIf="monthflag"
+    [count1]="x1"
+    [count2]="x2"
+    [todayis]="today"
+  ></app-month-view>
+   -->
