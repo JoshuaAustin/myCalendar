@@ -138,7 +138,7 @@
 
 
     <div class="time-line">
-      <div style="color:#000000; display: flex; flex-direction: row;" *ngIf="((this.date | date: 'dd/MM/yyyy') == (this.now| date: 'dd/MM/yyyy')) && this.exist == true"  [style.margin-top]="this.getheight(this.difference) + 'px'">    
+      <div style="color:#000000; display: flex; flex-direction: row;" *ngIf="((this.date | date: 'dd/MM/yyyy') == (this.now| date: 'dd/MM/yyyy')) && this.exist == true && this.now"  [style.margin-top]="this.getheight(this.difference) + 'px'">    
         __________________________________________________________________________________________________________________<div class="LiveTime">{{ now | date: 'HH:mm' }}  <span class="timetext">{{ now | date: 'hh:mm:ss a' }}</span></div>
             </div>
     </div>
@@ -146,14 +146,14 @@
   </div>
 
   <div class="content-right">
-
+<!-- 
     View Date : {{ date | date: 'EEEE, MMMM d, y' }}   <br>
 
     Now Date : {{ now | date: 'EEEE, MMMM d, y' }}   <br>
     
     
     
-    Today  : {{ today | date: 'MMMM d, y' }}   <br>
+    Today  : {{ today | date: 'MMMM d, y' }}   <br> -->
     <br>
     <br>
     <br>

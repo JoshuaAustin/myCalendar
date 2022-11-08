@@ -56,7 +56,7 @@ difference =  0;
 height = 0;
 startheight = 0;
 endheight = 0;
-startworkTime = new Date(new Date().setHours(9, 0, 0, 0))
+startworkTime = new Date(new Date().setHours(9, 30, 0, 0))
 endworkTime = new Date(new Date().setHours(18, 0, 0, 0))
 
 exist = true;
@@ -73,25 +73,25 @@ diff_minutes(dt2: Date, dt1: Date)
 
 getheight(d: number)
 { 
-  return ((36.25/60)*d);
+  return ((36.07/60)*d);
 }
 
-timelineExist(dt2: Date, dt1: Date){
-  dt1 = new Date(dt1);   // endTime
-  dt2 = new Date(dt2);   // now
-  if (dt2 < dt1)
+timelineExist(dt1: Date, dt2: Date, dt3: Date){
+  dt1 = new Date(dt1);   // now
+  dt2 = new Date(dt2);   // start
+  dt3 = new Date(dt3);   // end
+  if (dt2 >= dt1 && dt3<=dt1)
     return true;
   else
     return false;
 }
 
-// 1 hour === 36 px
+// 1 hour === 36.25 px
 
 constructor() {
 
   setInterval(() => {this.startTime = new Date(this.date.setHours(6, 0, 0, 0))}, 100);
-  setInterval(() => {this.startworkTime = new Date(this.date.setHours(9, 0, 0, 0))}, 100);
-  setInterval(() => {this.endTime = new Date(this.date.setHours(21, 0, 0, 0))}, 100);
+  setInterval(() => {this.startworkTime = new Date(this.date.setHours(9, 30, 0, 0))}, 100);
   setInterval(() => {this.endworkTime = new Date(this.date.setHours(18, 0, 0, 0))}, 100);
 
 
@@ -105,6 +105,6 @@ constructor() {
   setInterval(() => {this.endheight = this.getheight(this.diff_minutes(this.endworkTime, this.startTime))}, 1000);   
 
 
-  setInterval(() => {this.exist = this.timelineExist(this.now, this.endTime)}, 1);  
+  setInterval(() => {this.exist = this.timelineExist(this.now, this.startTime, this.endTime)}, 1);  
 }
 }
