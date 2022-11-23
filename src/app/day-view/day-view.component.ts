@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import eventsData from '/Users/joshuablue/Desktop/myCalendar/src/app/events-data.json';
+// import eventsData from '/Users/joshuablue/Desktop/myCalendar/src/app/events-data.json';
 
 
 
@@ -12,7 +12,7 @@ import eventsData from '/Users/joshuablue/Desktop/myCalendar/src/app/events-data
 })
 export class DayViewComponent {
 
-events: any = eventsData;
+// events: any = eventsData;
 
 
 // Date = new Date();

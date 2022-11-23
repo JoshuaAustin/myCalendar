@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import eventsData from '/Users/joshuablue/Desktop/myCalendar/src/app/events-data.json';
+// import eventsData from '/Users/joshuablue/Desktop/myCalendar/src/app/events-data.json';
 
 
 @Component({
@@ -20,7 +20,7 @@ export class WeekViewComponent implements OnInit {
     setInterval(() => {this.now = new Date()}, 1);
   }
 
-  events: any = eventsData;
+  // events: any = eventsData;
   Date = new Date();
   date = new Date(); // create new vaeiable for date
   today = Date.now()
